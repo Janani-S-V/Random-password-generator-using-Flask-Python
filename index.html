@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://t4.ftcdn.net/jpg/05/87/21/67/240_F_587216755_btyvBFPrnaHid0PU0LBvhpzMdNLwnIhy.jpg'); /* Replace 'your-background-image.jpg' with the path to your image */
+            background-size: cover;
+            text-align: center;
+        }
+
+        h1 {
+            color: #072C07;
+            padding: 15px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            padding: 25px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            background-color: #94ae94;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        checkbox {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Password Generator</h1>
+    <form method="post">
+        <label for="password_length">Password Length:</label>
+        <input type="number" name="password_length" id="password_length" required min="1">
+        <label><input type="checkbox" name="include_uppercase" checked>Uppercase Letters</label>
+        <label><input type="checkbox" name="include_lowercase" checked>Lowercase Letters</label>
+        <label><input type="checkbox" name="include_digits" checked>Digits</label>
+        <label><input type="checkbox" name="include_special" checked>Special Characters</label><br><br>
+        <button type="submit">Generate Password</button>
+    </form>
+    {% if password %}
+        <p>Your Generated Password: {{ password }}</p>
+    {% endif %}
+</body>
+</html>
